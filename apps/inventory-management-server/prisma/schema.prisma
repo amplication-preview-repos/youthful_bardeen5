@@ -1,0 +1,71 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model ItemMaster {
+  avgCost         Float?
+  createdAt       DateTime               @default(now())
+  dateTime        DateTime?
+  description     String?
+  guid            String?
+  id              String                 @id @default(cuid())
+  internalLotSeed String?
+  internalSnSeed  String?
+  itemId          String?
+  lastCost        Float?
+  lastDateTime    DateTime?
+  lotRule         EnumItemMasterLotRule?
+  mfgUomConvRate  Float?
+  name            String?
+  qoh             Float?
+  revision        String?
+  snRule          EnumItemMasterSnRule?
+  stdCost         Float?
+  uom             EnumItemMasterUom?
+  updatedAt       DateTime               @updatedAt
+  vdocsLink       String?
+}
+
+model InventoryRecordLayer {
+  cost        Float?
+  createdAt   DateTime                           @default(now())
+  dateTime    DateTime?
+  direction   EnumInventoryRecordLayerDirection?
+  document    String?
+  documentId  String?
+  externalLot String?
+  externalSn  String?
+  guid        String?
+  id          String                             @id @default(cuid())
+  internalLot String?
+  internalSn  String?
+  itemGuid    String?
+  itemId      String?
+  qty         Float?
+  revision    String?
+  softDeleted DateTime?
+  updatedAt   DateTime                           @updatedAt
+  vdocsLink   String?
+  virloutguid String?
+}
+
+enum EnumItemMasterLotRule {
+  Option1
+}
+
+enum EnumItemMasterSnRule {
+  Option1
+}
+
+enum EnumItemMasterUom {
+  Option1
+}
+
+enum EnumInventoryRecordLayerDirection {
+  Option1
+}

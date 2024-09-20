@@ -1,0 +1,20 @@
+export type ItemMasterCreateInput = {
+  avgCost?: number | null;
+  dateTime?: Date | null;
+  description?: string | null;
+  guid?: string | null;
+  internalLotSeed?: string | null;
+  internalSnSeed?: string | null;
+  itemId?: string | null;
+  lastCost?: number | null;
+  lastDateTime?: Date | null;
+  lotRule?: "Option1" | null;
+  mfgUomConvRate?: number | null;
+  name?: string | null;
+  qoh?: number | null;
+  revision?: string | null;
+  snRule?: "Option1" | null;
+  stdCost?: number | null;
+  uom?: "Option1" | null;
+  vdocsLink?: string | null;
+};

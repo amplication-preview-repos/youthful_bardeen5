@@ -1,0 +1,22 @@
+export type InventoryRecordLayer = {
+  cost: number | null;
+  createdAt: Date;
+  dateTime: Date | null;
+  direction?: "Option1" | null;
+  document: string | null;
+  documentId: string | null;
+  externalLot: string | null;
+  externalSn: string | null;
+  guid: string | null;
+  id: string;
+  internalLot: string | null;
+  internalSn: string | null;
+  itemGuid: string | null;
+  itemId: string | null;
+  qty: number | null;
+  revision: string | null;
+  softDeleted: Date | null;
+  updatedAt: Date;
+  vdocsLink: string | null;
+  virloutguid: string | null;
+};
